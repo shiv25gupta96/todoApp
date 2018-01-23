@@ -1,0 +1,22 @@
+<p>List of all Todos</p>
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Description</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+  <% @todos.each do |todo| %>
+    <tr>
+      <td> <%= todo.name %> </td>
+      <td><%= todo.description %></td>
+      <td><%= link_to 'Show', todo %></td>
+      <td><%= link_to 'Edit', action: 'edit', id: todo %></td>
+      <td><%= link_to 'Delete', {action: :destroy, id: todo.id.to_s }, method: "DELETE" %></td>
+    </tr>
+  <% end %>
+</table>
+<p>
+  <%= link_to 'new', action: :new %>
+</p> 

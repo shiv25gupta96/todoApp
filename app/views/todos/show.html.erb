@@ -1,0 +1,17 @@
+<h2>Content for <%= @todo.name %></h2>
+<% if flash[:created] %>
+  <div>
+    <p>
+      *<%= flash[:created] %>
+    </p>
+  </div>
+<% end %>
+
+<p>
+  <span><strong>Name: </strong> <%= @todo.name %></span><br>
+  <span><strong>Description:</strong> <%= @todo.description %></span>
+</pp>
+
+<p>
+  <%= link_to 'List', {action: :index} %>
+</p>
