@@ -9,7 +9,7 @@
   </tr>
   <% @todos.each do |todo| %>
     <tr>
-      <td> <%= todo.name %> </td>
+      <td><%= todo.name %> </td>
       <td><%= todo.description %></td>
       <td><%= link_to 'Show', todo %></td>
       <td><%= link_to 'Edit', {action: 'edit', id: todo}, class: "button" %></td>

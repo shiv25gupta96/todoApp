@@ -1,0 +1,27 @@
+<% if @todo.errors.any? %>
+  <p>The following errors occured, please fix them</p>
+  <ul>
+    <% @todo.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+  </ul>
+<% end %>
+
+<%= form_for @todo, html: {class: "my_form"} do |foo| %>
+  <p>
+    <%= foo.label :name, "Title:" %><br>
+    <%= foo.text_field :name %>
+  </p>
+  <p>
+    <%= foo.label :description, "Decription:" %><br>
+    <%= foo.text_area :description %>
+  </p>
+  <p>
+    <% if @todo.new_record? %>
+      <%= foo.submit "Create" %>
+    <% else %>
+      <%= foo.submit "Edit" %>
+    <% end %>
+  </p>
+<% end %>
+<%= link_to 'List All Todos', todos_path %>

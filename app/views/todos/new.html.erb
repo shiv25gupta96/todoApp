@@ -1,23 +1,2 @@
-<% if @any.errors.any? %>
-  <ul>
-    <% @any.errors.full_messages.each do |msg| %>
-      <li><%= msg %></li>
-    <% end %>
-  </ul>
-<% end %>
-
-<%= form_for @any, url: {action: "create"}, html: {class: "my_form"} do |foo| %>
-
-  <p>
-    <%= foo.label :name, "Title:" %><br>
-    <%= foo.text_field :name %>
-  </p>
-  <p>
-    <%= foo.label :description, "Decription:" %><br>
-    <%= foo.text_area :description %>
-  </p>
-  <p>
-    <%= foo.submit "Create" %>
-  </p>
-<% end %>
-<%= link_to 'List All Todos', todos_path %>
+<h2>Create a New Todo</h2>
+<%= render 'todo_form' %>

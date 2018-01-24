@@ -9,13 +9,7 @@
   </head>
 
   <body>
-    <% if flash[:notice] %>
-      <div>
-        <p>
-          *<%= flash[:notice] %>
-        </p>
-      </div>
-    <% end %>
+    <%= render 'layouts/message' %>
     <%= yield %>
   </body>
 </html>
