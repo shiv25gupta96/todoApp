@@ -13,7 +13,7 @@
       <td><%= todo.description %></td>
       <td><%= link_to 'Show', todo %></td>
       <td><%= link_to 'Edit', {action: 'edit', id: todo}, class: "button" %></td>
-      <td><%= link_to 'Delete', {action: :destroy, id: todo.id.to_s }, method: "DELETE" %></td>
+      <td><%= link_to 'Delete', todo_path(todo), { data: {confirm: "are you sure, you want to delete?", method: "DELETE"} }%></td>
     </tr>
   <% end %>
 </table>

@@ -39,8 +39,7 @@ class TodosController < ApplicationController
     def destroy
         @todo = Todo.find(params[:id])
         if @todo.delete
-            @todos = Todo.all
-            render 'index'
+            redirect_to todos_path
         end
     end
 
