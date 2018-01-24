@@ -12,7 +12,7 @@
       <td> <%= todo.name %> </td>
       <td><%= todo.description %></td>
       <td><%= link_to 'Show', todo %></td>
-      <td><%= link_to 'Edit', action: 'edit', id: todo %></td>
+      <td><%= link_to 'Edit', {action: 'edit', id: todo}, class: "button" %></td>
       <td><%= link_to 'Delete', {action: :destroy, id: todo.id.to_s }, method: "DELETE" %></td>
     </tr>
   <% end %>
